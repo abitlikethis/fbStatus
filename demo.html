@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<meta name="author" content="prettyklicks.com" />
+	<meta name="description" content="Demo of facebook graph api with jQuery to make a feed/widget." />
+	<meta name="keywords" content="facebook graph api, json, jquery" />
+	
+	<title>fbStatus - Facebook feed using jQuery</title>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	
+	<!-- IGNORE THIS STUFF IT'S JUST OUR STYLIN -->
+	<link rel="stylesheet" type="text/css" media="all" href="http://abitlikethat.com/core/style.css" />
+	<script type="text/javascript" src="http://abitlikethat.com/core/core.js"></script>
+	<!-- END IGNORE THIS STUFF IT'S JUST OUR STYLIN -->
+	
+	<style type="text/css">
+		.facebookfeed{text-align:left;width:300px;margin:40px auto;border:#555 1px solid;padding:10px;background:#222;-moz-border-radius:8px;-webkit-border-radius:8px;}
+		.facebookfeed ul{list-style:none;padding:0;margin:0;}
+		.facebookfeed ul li{list-style:none;padding:10px 0;margin:0;border-bottom:#555 1px solid;}
+		.facebookfeed ul li:last-child{border:0;}
+		.facebookfeed ul li:hover{color:#e6f2fa;}	
+	</style>
+	
+	<script type="text/javascript" src="jquery.fbstatus.js"></script>
+	<script type="text/javascript">
+		$(function() {
+		
+			$(".facebookfeed").fbstatus({
+				username: 'prettyklicks',
+				count: 5,
+				loading_text: "loading status..."
+			});
+			
+		});
+		
+	</script>
+
+</head>
+	
+	<body>
+		<div id="container">
+			<div id="content">
+			
+			<h1>fbStatus jQuery Demo</h1>
+			
+			<h2>Pretty Klicks' Facebook like page feed</h2>
+			<div class="facebookfeed">
+				<h2>Loading...</h2>
+			</div>
+			
+			<p>Feel free to fork the source on <a href="http://github.com/abitlikethis/fbStatus">Github</a> or visit the <a href="http://abitlikethis.com/">Abitlikethis</a> website for more cool stuff.</p>
+			
+			</div><!-- END Content -->
+		</div><!-- END Container -->
+	</body>
+
+</html>
