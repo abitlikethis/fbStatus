@@ -15,7 +15,13 @@
 			count: 5,							// [integer]  how many status updates to display?
 			loading_text: null                  // [string]   optional loading text, displayed while tweets load
 		}, options);
-	
+		
+		function fbstatus_link(text){
+	        return text.replace(/(href="|<a.*?>)?[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+/g, function($0, $1) {
+	          return $1 ? $0 : $0.link($0);
+			});
+	    }
+		
 		//Set Url of JSON data from the facebook graph api. make sure callback is set with a '?' to overcome the cross domain problems with JSON
   		var url = "http://graph.facebook.com/"+set.username+"/feed?limit="+set.count+"&callback=?";
 		
@@ -31,7 +37,7 @@
 			    	$.each(json.data,function(i,fb){
 			      		
 			      		if (fb.message) {
-							html += "<li>" + fb.message + "</li>";
+							html += "<li>" + fbstatus_link(fb.message) + "</li>";
 						}
 						
 			    	});
